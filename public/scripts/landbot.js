@@ -19,10 +19,10 @@ function downloadChart (projectName) {
 }
 
 const urlParams = new URLSearchParams(window.location.search)
-const id = urlParams.get('id') || 'H-918478-FZBUA78S346I7FNF'
+const id = urlParams.get('id') || 'H-1686691-RWC0LLC535N1YA7V'
 // Create and connect to the Landbot
 // eslint-disable-next-line no-new, no-undef
 new Landbot.Container({
   container: '.landbot',
-  configUrl: `https://chats.landbot.io/v3/${id}/index.json`
+  configUrl: `https://landbot.pro/v3/${id}/index.json`
 })

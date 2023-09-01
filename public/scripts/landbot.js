@@ -7,17 +7,6 @@ function updateChart (landbotData) {
   updateChartData(landbotData)
 }
 
-/*
- Function to download the canvas as .png image, called by landbot
-*/
-// eslint-disable-next-line no-unused-vars
-function downloadChart (projectName) {
-  const link = document.createElement('a')
-  link.download = projectName + '_valuewheel.png'
-  link.href = document.querySelector('#chartjs').toDataURL('image/png')
-  link.click()
-}
-
 const urlParams = new URLSearchParams(window.location.search)
 const id = urlParams.get('id') || 'H-1686691-RWC0LLC535N1YA7V'
 // Create and connect to the Landbot
@@ -26,3 +15,18 @@ new Landbot.Container({
   container: '.landbot',
   configUrl: `https://landbot.pro/v3/${id}/index.json`
 })
+
+function updateGauge(type,progress) {
+  // Vérifier si la valeur de progression est entre 0 et 100
+  if (progress < 0 || progress > 100) {
+    console.error("La valeur de progression doit être entre 0 et 100.");
+    return;
+  }
+
+  // Mettre à jour le texte de la valeur de progression
+  document.querySelector(".inner-"+type).innerText = `${progress}%`;
+
+  // Appliquer le degré de rotation à la barre de progression
+  const circle = document.querySelector('.circle-'+type);
+  circle.style.backgroundImage = 'conic-gradient(#B5838D ' + progress + '%, #FFCDB2 0)';
+}

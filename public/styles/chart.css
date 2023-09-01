@@ -1,0 +1,63 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.wrap-circles {
+  display: flex;
+  min-height: 2vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.circle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background: #FFCDB2;
+  overflow: hidden;
+  background-image: conic-gradient(#B5838D 0%, #FFCDB2 0);
+}
+
+.circle .inner-impact,.inner-popularite,.inner-totalitarisme,.inner-technologie,.inner-democratie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: #000;
+  border-radius: 50%;
+  font-size: 1.85em;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+.popularity-label {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.jauges{display: flex;justify-content: space-between;
+  align-items: center;}
+
+.flex-item {
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+iframe{height: 90vh!important;}
+

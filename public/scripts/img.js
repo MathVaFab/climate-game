@@ -2,6 +2,7 @@
 const dataIndex = new Map();
 dataIndex.set('facadesblanches', 10);
 dataIndex.set('traffic', 20);
+dataIndex.set('trocacouvert', 25);
 dataIndex.set('parisousbois', 30);
 dataIndex.set('haussmansousbois', 40);
 dataIndex.set('popdensite', 100);
@@ -14,7 +15,7 @@ function createImage(varName, status) {
     const img = document.createElement("img");
 
     // Définir les attributs pour l'élément img
-    img.src = `images/${varName}${status}.png`;
+    img.src = `images/game/${varName}${status}.png`;
     img.alt = varName;
     img.width = '400';
     img.style.position = "absolute";
@@ -25,4 +26,16 @@ function createImage(varName, status) {
 
     // Ajouter l'élément img dans le div
     container.appendChild(img);
+}
+
+function deleteId(id) {
+  // Trouver l'élément
+  const element = document.getElementById(id);
+
+  // Supprimer l'élément
+  if (element) {
+    element.remove();
+} else {
+    console.warn(`Élément avec l'ID ${id} non trouvé.`);
+}
 }

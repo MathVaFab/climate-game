@@ -1,5 +1,5 @@
 {
-  "name": "value-wheel",
+  "name": "climategame",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/faberNovel/value-wheel.git"
+    "url": "git+https://github.com/MathVaFab/Climategame"
   },
   "author": "",
   "license": "ISC",

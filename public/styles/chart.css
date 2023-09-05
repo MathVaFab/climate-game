@@ -51,7 +51,7 @@
   margin-top: 10px;
 }
 
-.jauges{display: flex;justify-content: space-between;
+.jauges{display: flex;justify-content: space-around;
   align-items: center;}
 
 .flex-item {

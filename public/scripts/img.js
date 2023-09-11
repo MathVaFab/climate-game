@@ -7,6 +7,7 @@ dataIndex.set('parisousbois', 30);
 dataIndex.set('haussmansousbois', 40);
 dataIndex.set('popdensite', 100);
 dataIndex.set('charbon', 1000);
+dataIndex.set('pub',21);
 
 function createImage(varName, status) {
     const container = document.getElementById("chartjs-container");

@@ -1,0 +1,175 @@
+> ça ça ne servait à rien
+
+.header-main--menu {
+  display: none;
+  width: 4em;
+  height: 100%;
+  justify-self: flex-end;
+  z-index: 10;
+}
+
+.header-main--menu .menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-main--menu nav {
+  flex-grow: 1;
+  margin-left: 3.5rem;
+  margin-top: 3.5em;
+  counter-reset: link;
+}
+
+.header-main--menu a::before {
+  display: block;
+  counter-increment: link;
+  content: "0" counter(link) ".";
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+.header-main--menu a::after {
+  content: ">";
+  display: inline-block;
+  font-weight: 300;
+  margin-left: 0.25em;
+}
+
+.header-main--menu footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3.5rem;
+}
+
+.header-main--menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.header-main--menu li {
+  margin-bottom: 3em;
+}
+
+.header-main--menu input {
+  cursor: pointer;
+  flex-grow: 1;
+  height: 100%; /* because Chrome does not stretch input */
+  margin: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.header-main--menu .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #acedfc;
+  transform: translate3d(0, -100vh, 0);
+  transition: all 0.5s ease-in-out;
+  font-size: 3.2rem;
+}
+
+.header-main--menu span {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: inherit;
+  top: 50%;
+  background-color: white;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.header-main--menu span:first-of-type {
+  transform: translateY(2rem);
+}
+
+.header-main--menu input:checked ~ span:first-of-type {
+  transform: rotate(-45deg);
+  background-color: black;
+}
+
+.header-main--menu span:last-of-type {
+  transform: translateY(-2rem);
+}
+
+.header-main--menu input:checked ~ span:last-of-type {
+  transform: rotate(45deg);
+  background-color: black;
+}
+
+.header-main--menu input:checked ~ #middle-span {
+  transform: scale(0);
+}
+
+.header-main--menu input:checked ~ .menu {
+  transform: none;
+}
+
+
+> ça c'était commenté
+
+
+<!--<div class="wrap-circles flex-item">
+				<div class="circle-container">
+					<div class="popularity-label">Totalitarisme</div>
+					<div class="circle circle-totalitarisme">
+						<div class="inner-totalitarisme">0%</div>
+					</div>
+				</div>
+			</div>-->
+        <!--<div class="wrap-circles flex-item">
+				<div class="circle-container">
+					<div class="popularity-label">Démocratie</div>
+					<div class="circle circle-democratie">
+						<div class="inner-democratie">0%</div>
+					</div>
+
+				</div>
+			</div>-->
+        <!--<div class="wrap-circles flex-item">
+				<div class="circle-container">
+					<div class="popularity-label">Technologie</div>
+					<div class="circle circle-technologie">
+						<div class="inner-technologie">0%</div>
+					</div>
+				</div>
+			</div>-->
+
+
+
+> ça ce n'était pas affiché.
+
+<!-- 
+
+
+	    <div class="header-main--menu">
+        <input type="checkbox" />
+        <span></span>
+        <span id="middle-span"></span>
+        <span></span>
+        <div class="menu">
+          <nav>
+            <ul>
+              <li>
+                <a
+                  href="https://www.fabernovel.com/fr/article/tendances/la-value-wheel"
+                  class="bold"
+                  >The value wheel</a
+                >
+              </li>
+              <li>
+                <a href="mailto:valuewheel@fabernovel.com" class="bold"
+                  >Contact us</a
+                >
+                <p class="no-margin">create your value wheel</p>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+ -->

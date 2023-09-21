@@ -1,139 +1,187 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 .wrap-circles {
   display: flex;
-  min-height: 2vh;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
-}
-
-.circle-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 3.5rem;
+  width: 50%;
 }
 
 .circle {
   position: relative;
-  width: 90px;
-  height: 90px;
-  margin: 0.5rem;
-  border-radius: 50%;
-  background: #FFCDB2;
-  overflow: hidden;
-  background-image: conic-gradient(#B5838D 0%, #FFCDB2 0);
-}
-
-.circle .inner-impact,.inner-popularite,.inner-totalitarisme,.inner-technologie,.inner-democratie {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
-  background: #000;
+  width: 5.5rem;
+  height: 5.5rem;
+  background: #e02678;
+  font-weight: 700;
   border-radius: 50%;
-  font-size: 1.85em;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 2px 2px 0 #00000010, 0 0 4px -2px #00000020;
 }
 
-
-.popularity-label {
-  text-align: center;
-  margin-top: 10px;
+.anim-2 {
+  animation: shake 10s cubic-bezier(0.87, 0, 0.13, 1) 0s infinite alternate
+    forwards;
+}
+.anim-1 {
+  animation: shake 10s cubic-bezier(0.87, 0, 0.13, 1) 4s infinite alternate
+    forwards;
 }
 
-.jauges{display: flex;justify-content: space-around;
-  align-items: center;}
-
-.flex-item {
-    height: 100px;
-    margin-bottom: 20px;
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
   }
 
-iframe{height: 80vh!important;}
-.background {
-    position: absolute; /* Positionnement absolu */
-    bottom: 0; /* Positionné au bas de la page */
-    left: 0; /* Positionné à gauche de la page */
-    background-color: rgba(0, 0, 0, 0.66);
-    width: 100%;
-    height: 100vh;
+  10% {
+    transform: rotate(4deg);
+  }
+
+  20%,
+  40%,
+  60% {
+    transform: rotate(-5deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: rotate(10deg);
+  }
+
+  80% {
+    transform: rotate(-4deg);
+  }
+
+  90% {
+    transform: rotate(3deg);
+  }
+}
+
+.popularity-label {
+  position: relative;
+  text-align: center;
+  font-size: 1rem;
+  transform: rotate(3deg);
+  color: white;
+  padding: 1rem 1.5rem;
+  background-color: black;
+  border-radius: 0.75rem 0.75rem 0.125rem;
+  margin-top: 0rem;
+  margin-right: 0.5rem;
+  box-shadow: 0 2px 2px 0 #00000010, 0 0 4px -2px #00000020;
+}
+
+.jauges {
+  display: flex;
+  position: relative;
+  z-index: 400;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.chart {
+  flex: 40% 0 0;
+  padding-right: 1rem;
+  padding-top: 3.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#chartjs-container {
+  min-height: 50vh;
+  width: 100%;
+}
+
+.background-game {
+  border-radius: 0.75rem;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 2px 2px 0 #00000010, 0 0 4px -2px #00000020;
+}
+
+.footer {
+  display: flex;
+  padding-top: 3rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-main--contact {
+  right: 2.5rem;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  text-decoration: none;
+  border-radius: 76px;
+  font-weight: 700;
+  padding: 5px 32px;
+  transition: 0.1s ease-in-out;
+  transition-property: background-color, color;
+  box-shadow: 0 2px 2px 0 #00000010, 0 0 4px -2px #00000020;
+}
+
+.header-main--contact:hover {
+  background-color: white;
+  color: #c7c7c7;
+  border-color: black;
+}
+
+.powered-by {
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.powered-by > p {
+  position: relative;
+  top: 0.75rem;
+}
+
+@media screen and (max-width: 1000px) {
+  #chartjs-container {
+    min-height: 0;
+  }
+
+  .popularity-label {
+    font-size: 1rem;
+    transform: rotate(0);
+    color: black;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .header-main--contact {
+    margin-bottom: 1rem;
+  }
+
+  .chart {
+    padding-inline: 1rem;
+    margin-top: 3.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .footer {
     display: flex;
-    justify-content: center;
+    padding-top: 1.5rem;
+    flex-direction: column;
     align-items: center;
-}
+  }
 
-.banner {
-    display: flex;
-    align-items: flex-end;
-    width: 100%;
-    height: 100%;
-}
+  .popularity-label {
+    font-size: 1rem;
+  }
 
-.character {
-  height:450px;
-}
-
-.text {
-    width: 66%;
-    height: 44vh;
-    display: flex;
-    align-items: center;
-}
-
-.bubble.grow {
-    width: initial;
-}
-.bubble {
-    position: relative;
-    display: inline-block;
-    margin: 20px;
-    text-align: center;
-    font-family: "Press Start 2P", cursive;
-    font-size: 16px;
-    line-height: 1.3em;
-    background-color: #fff;
-    color: #000;
-    padding: 18px;
-    box-shadow: 0 -4px #fff, 0 -8px #000, 4px 0 #fff, 4px -4px #000, 8px 0 #000, 0 4px #fff, 0 8px #000, -4px 0 #fff, -4px 4px #000, -8px 0 #000, -4px -4px #000, 4px 4px #000;
-    box-sizing: border-box;
-    width: 200px;
-}
-
-.bubble.left::after {
-    height: 4px;
-    width: 4px;
-    top: 20px;
-    left: -8px;
-    background: white;
-    box-shadow: -4px -4px #fff, -4px 0 #fff, -8px 0 #fff, 0 -8px #fff, -4px 4px #000, -8px 4px #000, -12px 4px #000, -16px 4px #000, -12px 0 #000, -8px -4px #000, -4px -8px #000, 0 -4px #fff;
-}
-.bubble::after {
-    content: "";
-    display: block;
-    position: absolute;
-    box-sizing: border-box;
-}
-
-.eightbit-btn {
-    margin-top: 20px;
-    background: #92CD41;
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    font-size: 30px;
-    padding: 20px;
-    font-family: "Press Start 2P", cursive;
-    text-decoration: none;
-    color: white;
-    box-shadow: inset -4px -4px 0px 0px #4AA52E;
+  .circle {
+    width: 5rem;
+    height: 5rem;
+    font-size: 1.25rem;
+  }
 }

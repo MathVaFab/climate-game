@@ -1,101 +1,78 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="./styles/fonts.css" />
-	<link rel="stylesheet" href="./styles/layout.css" />
-	<link rel="stylesheet" href="./styles/header.css" />
-	<link rel="stylesheet" href="./styles/chart.css" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&amp;display=swap">
-	<script src="https://static.landbot.io/landbot-3/landbot-3.0.0.js"></script>
-	<script src="./scripts/img.js"></script>
-	<script src="./scripts/landbot.js"></script>
-	<link rel="icon" type="image/png" sizes="16x16" href="images/round-logo-16x16.png">
-	<title>The Climate Game</title>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/chart.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P&amp;display=swap"
+    />
+    <script src="https://static.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+    <script src="./scripts/img.js"></script>
+    <script src="./scripts/landbot.js"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/round-logo-16x16.png"
+    />
+    <title>The Climate Game</title>
+  </head>
 
-<body>
-
-	<div class="landbot-container">
-		<header class="header-main">
-			<div class="header-main--logo-container">
-				<img class="header-main--logo" src="images/round-logo.svg">
-				<h1 class="header-main--title" id="tester">Climate Game by EY FaberNovel</h1>
-			</div>
-			<a class="header-main--contact" href="mailto:valuewheel@fabernovel.com">Partager le jeu</a>
-			<div class="header-main--menu">
-				<input type="checkbox" />
-				<span></span>
-				<span id="middle-span"></span>
-				<span></span>
-				<div class="menu">
-					<nav>
-						<ul>
-							<li>
-								<a href="https://www.fabernovel.com/fr/article/tendances/la-value-wheel" class="bold">The value wheel</a>
-							</li>
-							<li>
-								<a href="mailto:valuewheel@fabernovel.com" class="bold">Contact us</a>
-								<p class="no-margin">create your value wheel</p>
-							</li>
-						</ul>
-					</nav>
-					<footer>
-						<p class="bold powered-by">Powered by</p>
-						<img src="./images/text-logo.svg">
-					</footer>               
-				</div>
-			</div>
-		</header>
-		<div class="jauges">
-			<div class="wrap-circles flex-item">
-				<div class="circle-container">
-					<div class="popularity-label">Popularité</div>
-					<div class="circle circle-popularite">
-						<div class="inner-popularite">0%</div>
-					</div>
-
-				</div>
-			</div>
-			<!--<div class="wrap-circles flex-item">
-				<div class="circle-container">
-					<div class="popularity-label">Totalitarisme</div>
-					<div class="circle circle-totalitarisme">
-						<div class="inner-totalitarisme">0%</div>
-					</div>
-				</div>
-			</div>-->
-			<!--<div class="wrap-circles flex-item">
-				<div class="circle-container">
-					<div class="popularity-label">Démocratie</div>
-					<div class="circle circle-democratie">
-						<div class="inner-democratie">0%</div>
-					</div>
-
-				</div>
-			</div>-->
-			<!--<div class="wrap-circles flex-item">
-				<div class="circle-container">
-					<div class="popularity-label">Technologie</div>
-					<div class="circle circle-technologie">
-						<div class="inner-technologie">0%</div>
-					</div>
-				</div>
-			</div>-->
-			<div class="wrap-circles flex-item">
-				<div class="circle-container">
-					<div class="popularity-label">Impact</div>
-					<div class="circle circle-impact">
-						<div class="inner-impact">0%</div>
-					</div>
-				</div>
-			</div>
-		</div>
-			<div class="landbot"></div>
-		</div>
-		<div class="chart">
-			<div id="chartjs-container">
-			</div>
-		</div>
-	</body>
-	</html>
+  <body>
+    <header class="header-main">
+      <div class="header-main--logo-container">
+        <img class="header-main--logo" src="images/round-logo.svg" />
+        <h1 class="header-main--title" id="tester">
+          <div class="header-main--mobile">
+            Climate Game<br /><span>by </span>EY FaberNovel
+          </div>
+          <div class="header-main--fullsize">
+            Climate Game<span> by </span>EY FaberNovel
+          </div>
+        </h1>
+      </div>
+    </header>
+    <section>
+      <div class="landbot-container">
+        <div class="jauges">
+          <div class="wrap-circles">
+            <div class="popularity-label">Efforts :</div>
+            <div class="circle anim-1">
+              <div class="inner-popularite">20%</div>
+            </div>
+          </div>
+          <div class="wrap-circles">
+            <div class="popularity-label">Impact :</div>
+            <div class="circle anim-2">
+              <div class="inner-impact">100%</div>
+            </div>
+          </div>
+        </div>
+        <div class="landbot"></div>
+      </div>
+      <div class="chart">
+        <div id="chartjs-container"></div>
+        <div class="footer">
+          <a
+            class="header-main--contact"
+            href="mailto:valuewheel@fabernovel.com"
+            >Partager le jeu</a
+          >
+          <a
+            class="powered-by"
+            href="https://www.fabernovel.com/"
+            target="_blank"
+          >
+            <p>powered by</p>
+            <img src="./images/text-logo.svg" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -16,14 +16,14 @@ function createImage(varName, status) {
     const img = document.createElement("img");
 
     // Définir les attributs pour l'élément img
-    img.src = `images/game/${varName}${status}.png`;
+    img.src = `images/game/${varName}.png`;
     img.alt = varName;
     img.width = '400';
     img.style.position = "absolute";
     img.classList.add('background-game');
 
     // Utiliser le zIndex de la variable passée plutôt que d'une valeur fixe
-    img.style.zIndex = dataIndex.get(varName) || 0;  // Si varName n'existe pas dans dataIndex, utiliser 0 comme valeur par défaut
+    img.style.zIndex = ${status} || 0;  // Si varName n'existe pas dans dataIndex, utiliser 0 comme valeur par défaut
     img.id = varName;
 
     // Ajouter l'élément img dans le div

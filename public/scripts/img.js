@@ -14,6 +14,7 @@ function createImage(varName, status) {
 
     // Créer un nouvel élément img
     const img = document.createElement("img");
+    alert("ok");
 
     // Définir les attributs pour l'élément img
     img.src = `images/game/${varName}.png`;

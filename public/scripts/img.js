@@ -9,35 +9,43 @@ dataIndex.set("popdensite", 100);
 dataIndex.set("charbon", 1000);
 dataIndex.set("pub", 21);
 
-function createImage(varName, status) {
+function createImage(param) {
+  if (!param) throw new Error("No parameters founds");
+
+  const { visuel, zindex } = param;
+  if (!visuel || !zindex) throw new Error("No parameters founds");
+
+  generateImage(visuel, zindex);
+}
+
+const generateImage = (imageName, zIndex, isLayer) => {
   const container = document.getElementById("chartjs-container");
 
   // Créer un nouvel élément img
   const img = document.createElement("img");
 
   // Définir les attributs pour l'élément img
-  img.src = `images/game/${varName}.png`;
-  img.alt = varName;
-  img.classList.add("background-game");
-  console.log(varName, status);
+  img.src = `images/game/${imageName}.png`;
+  img.alt = imageName;
+  img.classList.add("layer-game");
+
   // Utiliser le zIndex de la variable passée plutôt que d'une valeur fixe
-  img.style.zIndex = status ?? 0; // Si varName n'existe pas dans dataIndex, utiliser 0 comme valeur par défaut
-  img.id = varName;
+  // Si varName n'existe pas dans dataIndex, utiliser 0 comme valeur par défaut
+  img.style.zIndex = zIndex ?? 0;
+  img.id = imageName;
 
   // Ajouter l'élément img dans le div
   container.appendChild(img);
-}
+};
 
 function deleteId(id) {
   // Trouver l'élément
   const element = document.getElementById(id);
 
   // Supprimer l'élément
-  if (element) {
-    element.remove();
-  } else {
-    console.warn(`Élément avec l'ID ${id} non trouvé.`);
-  }
+  if (!element) throw new Error(`Élément avec l'ID ${id} non trouvé.`);
+
+  element.remove();
 }
 
 function ajouterBanner() {

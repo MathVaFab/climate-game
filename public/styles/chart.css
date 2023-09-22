@@ -13,12 +13,22 @@
   align-items: center;
   width: 5.5rem;
   height: 5.5rem;
-  background: #e02678;
+  background: black;
   font-weight: 700;
   border-radius: 50%;
   font-size: 1.5rem;
   color: white;
   box-shadow: 0 2px 2px 0 #00000010, 0 0 4px -2px #00000020;
+}
+
+.circle > div {
+  width: 4.5rem;
+  height: 4.5rem;
+  background: #e02678;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .anim-2 {
@@ -36,27 +46,22 @@
     transform: rotate(0deg);
     transform-origin: 50% 50%;
   }
-
   10% {
     transform: rotate(4deg);
   }
-
   20%,
   40%,
   60% {
     transform: rotate(-5deg);
   }
-
   30%,
   50%,
   70% {
     transform: rotate(10deg);
   }
-
   80% {
     transform: rotate(-4deg);
   }
-
   90% {
     transform: rotate(3deg);
   }
@@ -66,14 +71,12 @@
   position: relative;
   text-align: center;
   font-size: 1rem;
-  transform: rotate(3deg);
-  color: white;
-  padding: 1rem 1.5rem;
-  background-color: black;
+
+  color: black;
+
   border-radius: 0.75rem 0.75rem 0.125rem;
   margin-top: 0rem;
   margin-right: 0.5rem;
-  box-shadow: 0 2px 2px 0 #00000010, 0 0 4px -2px #00000020;
 }
 
 .jauges {
@@ -92,15 +95,36 @@
 }
 
 #chartjs-container {
-  min-height: 50vh;
+  display: block;
+  position: relative;
+  aspect-ratio: 7.5 / 10;
   width: 100%;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 0 #00000010, 0 0 4px -2px #00000020;
+  background-color: #80808010;
+  border-radius: 0.75rem;
+}
+
+.layer-game {
+  width: 100%;
+  position: absolute;
+  animation: fade 0.5s ease-in-out;
+  object-fit: cover;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .background-game {
-  border-radius: 0.75rem;
   width: 100%;
+  position: absolute;
   object-fit: cover;
-  box-shadow: 0 2px 2px 0 #00000010, 0 0 4px -2px #00000020;
 }
 
 .footer {
@@ -146,15 +170,6 @@
 @media screen and (max-width: 1000px) {
   #chartjs-container {
     min-height: 0;
-  }
-
-  .popularity-label {
-    font-size: 1rem;
-    transform: rotate(0);
-    color: black;
-    padding: 0;
-    background-color: transparent;
-    box-shadow: none;
   }
 
   .header-main--contact {

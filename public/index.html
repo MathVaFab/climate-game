@@ -40,23 +40,30 @@
     <section>
       <div class="landbot-container">
         <div class="jauges">
-          <div class="wrap-circles">
+          <div class="wrap-circles" id="effort-btn">
             <div class="popularity-label">Efforts :</div>
             <div class="circle anim-1">
-              <div class="inner-popularite">20%</div>
+              <div><div class="inner-popularite">100%</div></div>
             </div>
           </div>
-          <div class="wrap-circles">
+
+          <div class="wrap-circles" id="impact-btn">
             <div class="popularity-label">Impact :</div>
             <div class="circle anim-2">
-              <div class="inner-impact">100%</div>
+              <div><div class="inner-impact">0%</div></div>
             </div>
           </div>
         </div>
         <div class="landbot"></div>
       </div>
       <div class="chart">
-        <div id="chartjs-container"></div>
+        <div id="chartjs-container">
+          <img
+            src="images/game/BASE1.png"
+            alt="background"
+            class="background-game"
+          />
+        </div>
         <div class="footer">
           <a
             class="header-main--contact"

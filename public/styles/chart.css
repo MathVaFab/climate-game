@@ -108,7 +108,7 @@
 .layer-game {
   width: 100%;
   position: absolute;
-  animation: fade 0.5s ease-in-out;
+  animation: fade 0.3s ease-in-out;
   object-fit: cover;
 }
 
@@ -135,12 +135,11 @@
 }
 
 .header-main--contact {
-  right: 2.5rem;
   background-color: black;
   color: white;
   border: 1px solid white;
   text-decoration: none;
-  border-radius: 76px;
+  border-radius: 2rem;
   font-weight: 700;
   padding: 5px 32px;
   transition: 0.1s ease-in-out;
@@ -160,6 +159,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.powered-by:hover {
+  opacity: 0.5;
 }
 
 .powered-by > p {
@@ -170,10 +174,6 @@
 @media screen and (max-width: 1000px) {
   #chartjs-container {
     min-height: 0;
-  }
-
-  .header-main--contact {
-    margin-bottom: 1rem;
   }
 
   .chart {

@@ -22,17 +22,13 @@ section {
   display: flex;
   flex-direction: row;
   height: calc(100vh - 80px);
-  max-width: 1100px;
+  max-width: 85vw;
   margin: auto;
 }
 
 a {
   color: #000;
   text-decoration: none;
-}
-
-a:hover {
-  opacity: 0.7;
 }
 
 iframe {
@@ -60,7 +56,23 @@ iframe {
   box-shadow: 0 2px 2px 0 #00000010, 0 0 4px -2px #00000040;
 }
 
+.mobile {
+  display: none !important;
+}
+
+.full-screen {
+  position: relative;
+  top: -1rem;
+}
+
 @media screen and (max-width: 700px) {
+  .mobile {
+    display: inherit;
+  }
+  .full-screen {
+    display: none;
+  }
+
   section {
     flex-direction: column;
   }

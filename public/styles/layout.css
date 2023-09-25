@@ -81,3 +81,9 @@ iframe {
     width: 100vw;
   }
 }
+
+@media screen and (min-width: 1600px) {
+  section {
+    max-width: 74vw;
+  }
+}
